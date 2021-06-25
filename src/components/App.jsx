@@ -7,7 +7,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
 import SignIn from "./SignIn";
 import { AuthProvider } from "../context/AuthContext";
-import SignedRoute from "./SignedRoute";
+import UnsignedRoute from "./Routers/UnsignedRoute";
+import SignedRoute from "./Routers/SignedRoute";
+import Dashboard from './Dashboard'
 const App = () => {
   return (
     <AuthProvider>
@@ -17,8 +19,13 @@ const App = () => {
         <div className="content">
           <Switch>
             <Route exact path="/" component={Home} />
-            <SignedRoute exact path="/create-account" component={CreateAccount} />
-            <SignedRoute exact path="/sign-in" component={SignIn} />
+            <UnsignedRoute
+              exact
+              path="/create-account"
+              component={CreateAccount}
+            />
+            <UnsignedRoute exact path="/sign-in" component={SignIn} />
+            <SignedRoute exact path='/dashboard' component={Dashboard}/>
             <Route path="*" component={Error} />
           </Switch>
         </div>
