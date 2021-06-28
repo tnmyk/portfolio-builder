@@ -14,7 +14,7 @@ const SocialBtns = ({ socialLinks }) => {
   };
 
   const ReturnBtns = ({ socialname }) => {
-    if (socialLinks[socialname].trim() === "") return;
+    if (socialLinks[socialname].trim() === "") return '';
 
     switch (socialname) {
       case "instagram":
