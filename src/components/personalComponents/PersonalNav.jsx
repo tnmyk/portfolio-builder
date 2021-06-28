@@ -18,8 +18,6 @@ const PersonalNav = ({logo}) => {
       <div
         className={`${isMenuOpen ? "menu-active" : "menu-inactive"} nav-links`}
       >
-        {/* <Link to="/about">Learn more</Link>
-        <Link to="/about">Learn more</Link> */}
       </div>
       <RiMenu4Fill className="menuBtn" onClick={handleMenu} />
     </nav>
