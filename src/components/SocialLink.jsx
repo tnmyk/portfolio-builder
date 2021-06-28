@@ -30,26 +30,26 @@ const SocialLink = ({ name ,social,setSocial,socialLinks,setSocialLinks}) => {
             return (
               <AiOutlineInstagram className="social-link-choose-btn-icon" />
             );
-            break;
+            
           case "linkedin":
             return (
               <AiOutlineLinkedin className="social-link-choose-btn-icon" />
             );
-            break;
+            
           case "twitter":
             return <AiOutlineTwitter className="social-link-choose-btn-icon" />;
-            break;
+            
           case "facebook":
             return (
               <AiOutlineFacebook className="social-link-choose-btn-icon" />
             );
-            break;
+            
           case "youtube":
             return <AiOutlineYoutube className="social-link-choose-btn-icon" />;
-            break;
+            
           default:
-            return
-            break;
+            return ''
+            
         }
 
     }

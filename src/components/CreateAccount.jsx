@@ -21,7 +21,7 @@ const CreateAccount = () => {
       setErrorMsg("");
       setLoading(true);
       await signUp(email, password);
-      history.push("/");
+      history.push("/set-username");
     } catch (e) {
       setErrorMsg(e.message);
     }
@@ -32,7 +32,7 @@ const CreateAccount = () => {
   async function authGoogle() {
     try {
       await signInWithGoogle();
-      history.push("/");
+      history.push("/set-username");
     } catch (err) {
       console.log(err);
     }
