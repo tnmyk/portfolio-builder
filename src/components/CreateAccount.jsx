@@ -9,12 +9,12 @@ const CreateAccount = () => {
   const [cpassword, setCpassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [loading, setLoading] = useState(false);
-  const { signUp, signInWithGoogle, currentUser } = useAuth();
+  const { signUp, signInWithGoogle } = useAuth();
     const history = useHistory();
 
 
   async function signUpEmail() {
-    if (password != cpassword) {
+    if (password !== cpassword) {
       return setErrorMsg("Password and Confirm-password are not same");
     }
     try {

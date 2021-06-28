@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { Link,useHistory } from "react-router-dom";
 import {RiMenu4Fill} from 'react-icons/ri'
 import { useAuth } from "../context/AuthContext";
@@ -6,12 +6,13 @@ import { TiArrowSortedDown } from "react-icons/ti";
 import {BiLogInCircle} from 'react-icons/bi'
 import { FiSettings } from "react-icons/fi";
 const Nav = () => {
+  
   const history =useHistory()
   const {currentUser,signOut}=useAuth()
   const [isMenuOpen,setMenuOpen] =useState(false)
   const [isDropDownOpen, setDropDownOpen] = useState(false);
-    const [isLogged,setIsLogged] = useState(false)
-    const handleMenu = () => {
+  
+  const handleMenu = () => {
       setMenuOpen(!isMenuOpen);
     };
     const handleDropDown = () => {

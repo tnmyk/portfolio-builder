@@ -1,7 +1,7 @@
 import {Redirect, Route} from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext';
 
-const SignedRoute = ({component:Component,...rest}) => {
+const UnsignedRoute = ({component:Component,...rest}) => {
     const {currentUser} = useAuth()
     return ( <Route
         {...rest}
@@ -11,4 +11,4 @@ const SignedRoute = ({component:Component,...rest}) => {
     ></Route> );
 }
  
-export default SignedRoute;
+export default UnsignedRoute;

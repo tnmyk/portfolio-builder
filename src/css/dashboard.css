@@ -1,0 +1,24 @@
+.dashboard-page-btn-grid{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4,minmax(10rem,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(11rem,15rem));
+    grid-auto-rows: 2.5rem;
+    margin-top: 1rem;
+}
+.dashboard-page-btn{
+    background-color: rgb(235, 216, 253);
+    color: rgb(161, 61, 255);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    cursor: pointer;
+}
+.dashboard-page-btn-icons{
+    margin-left: 0.3rem;
+    background-color: inherit;
+    font-size: 1.1rem;
+}

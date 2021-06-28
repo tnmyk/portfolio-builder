@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  user-select: none;
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 5%;
+
+}
+.personal-page-content{
+    min-height: 80vh;
+    width: 80%;
+    margin: 0rem auto;
+    padding: 4rem;
+}
+.intro-flex{
+    width: 100%;
+    display: flex;
+    /* background-color: silver; */
+    align-items: center;
+    justify-content: center;
+}
+.photo-container {
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+.intro-text,.intro-photo{
+    /* width: 50%; */
+    /* background-color: springgreen; */
+}
+.intro-text{
+    max-width: 60%;
+    /* background-color: teal; */
+    word-break: break-all;
+    padding: 1rem 3rem;
+    
+}
+.personal-intro{
+    color: black;
+    line-height: 1.7rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+.personal-bio{
+    font-size: 0.85rem;
+    color: gray;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    width: 80%;
+    
+}
+.personal-social-btns-container{
+  display: flex;
+  align-items: center;
+}
+.personal-social-btns{
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.photo-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.personal-photo{
+  width: 100%;
+}

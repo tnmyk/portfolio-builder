@@ -1,0 +1,42 @@
+
+.username-input-container{
+    width: max-content;
+    height: max-content;
+    /* background-color:violet; */
+    padding: 0;
+    margin: 2rem 0;
+    margin-top: 3rem;
+}
+.username-input-container input{
+    text-transform: lowercase;
+}
+.loader{
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 102%;
+}
+.check-username{
+    color: rgb(91, 182, 0);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.unavail-username{
+    color: red;
+    transform: translateY(-50%) rotateZ(45deg);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.username-hint{
+    margin:2rem 0;
+}
+.get-username-btn{
+    border: none;
+    border-radius: 5px;
+    min-width: 4rem;
+    font-size: 0.8rem;
+    padding: 0.4rem;
+    background-color: rgb(255, 236, 130);
+    border: 1px solid gray;
+    margin-top: 2rem;
+}
