@@ -49,8 +49,8 @@ const PersonalSite = ({ setPersonal }) => {
   };
   return (
     <>
-      {!loading && <Site />}
-      {notFound && <Error />}
+      {!loading ? <Site />:''}
+      {notFound ? <Error />:''}
     </>
   );
 };
