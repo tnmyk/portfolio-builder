@@ -157,6 +157,7 @@ footer{
   height: 25rem;
   /* background-color: cyan; */
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 2.5rem;
   width: 100%;
 }

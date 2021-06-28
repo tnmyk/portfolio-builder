@@ -36,11 +36,8 @@ nav {
   border-radius: 50%;
   border: 1px solid gray;
 }
-.intro-text,.intro-photo{
-    /* width: 50%; */
-    /* background-color: springgreen; */
-}
-.intro-text{
+
+.personal-intro-text{
     max-width: 60%;
     /* background-color: teal; */
     word-break: break-all;

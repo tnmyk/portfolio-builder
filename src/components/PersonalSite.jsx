@@ -37,7 +37,7 @@ const PersonalSite = ({ setPersonal }) => {
                 <img src={data.data.photo} alt="" className="personal-photo" />
               </div>
             </div>
-            <div className="intro-text">
+            <div className="personal-intro-text">
               <h3 className="personal-intro">{data.data.form.intro}</h3>
               <p className="personal-bio">{data.data.form.bio}</p>
               <SocialBtns socialLinks={data.data.socialLinks} />
