@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { storage, db } from "../firebase";
 import { useAuth } from "../context/AuthContext";
 import "../css/createportfolio.css";
@@ -7,6 +8,7 @@ import Skill from "./CreatePortfolioComponents/Skill";
 import { FiSend } from "react-icons/fi";
 const CreatePortfolio = () => {
   const [skillArr, setSkillArr] = useState([]);
+  const history = useHistory()
   const socialLinkArr = [
     "instagram",
     "linkedin",
@@ -62,6 +64,10 @@ const CreatePortfolio = () => {
           skillArr: skillArr,
           photo: await fileRef.getDownloadURL(),
         },
+      }).then(()=>{
+        db.collection('users').doc(currentUser.uid).get().then((docSnap)=>{
+          history.push(`/portfolio/${docSnap.data().username}`)
+        })
       });
   }
   const handleUpload = (e) => {

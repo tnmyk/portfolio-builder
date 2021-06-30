@@ -4,9 +4,11 @@ import { useAuth } from "../context/AuthContext";
 import Loader from "react-loader-spinner";
 import { GoCheck } from "react-icons/go";
 import { AiOutlinePlus } from "react-icons/ai";
+import { useHistory } from "react-router-dom";
 
 import "../css/setusername.css";
 const SetUsername = () => {
+  const history=useHistory()
   const { currentUser } = useAuth();
   const [username, setUsername] = useState("");
   const [loading, setLoading] = useState("");
@@ -29,6 +31,7 @@ const SetUsername = () => {
     } catch {
       console.log('errr')
     }
+    history.push('/dashboard')
   }
 
   const handleUsername = (e) => {
