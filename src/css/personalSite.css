@@ -31,7 +31,7 @@ nav {
     /* background-color: greenyellow; */
 }
 .personal-subheading{
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 .intro-flex{
     width: 100%;
@@ -39,7 +39,7 @@ nav {
     /* background-color: silver; */
     align-items: center;
     justify-content: center;
-    margin-bottom: 5rem;
+    margin-bottom: 6rem;
 }
 .photo-container {
   width: 14rem;
