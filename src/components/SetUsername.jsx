@@ -85,7 +85,7 @@ const SetUsername = () => {
         <br />
         You can't change this later.
       </div>
-      <button className="get-username-btn" onClick={handleSubmitUsername}>
+      <button className="btn " onClick={handleSubmitUsername}>
         Get Username
       </button>
     </div>

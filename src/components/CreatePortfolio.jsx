@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { storage, db } from "../firebase";
 import { useAuth } from "../context/AuthContext";
@@ -6,7 +6,14 @@ import "../css/createportfolio.css";
 import SocialLink from "./CreatePortfolioComponents/SocialLink";
 import Skill from "./CreatePortfolioComponents/Skill";
 import { FiSend } from "react-icons/fi";
+import { MdAddAPhoto } from "react-icons/md";
 const CreatePortfolio = () => {
+  
+  useEffect(()=>{
+    document.querySelector(".upload-photo-container").addEventListener('click',()=>{
+    document.querySelector("#input-photo").click();
+  });
+  },[])
   const [skillArr, setSkillArr] = useState([]);
   const history = useHistory()
   const socialLinkArr = [
@@ -91,7 +98,11 @@ const CreatePortfolio = () => {
       </h2>
       <div className="upload-photo align-middle">
         <div className="upload-photo-container">
-          <img src={photoURL} alt="" className="photo" />
+          {photoURL ? (
+            <img src={photoURL} alt="" className="photo" />
+          ) : (
+            <MdAddAPhoto className="upload-photo-container-icon" />
+          )}
         </div>
         <input
           type="file"
@@ -129,7 +140,7 @@ const CreatePortfolio = () => {
           <div className="input-count">{form.bio.length} /150</div>
         </div>
         <div className="input-hint">
-          Tell something interesting about yourself in 150 letters
+          Tell something interesting about yourself in 150 characters
         </div>
       </div>
       <h2 className="create-portfolio-steps">Step 3 : Social Links</h2>
@@ -181,7 +192,7 @@ const CreatePortfolio = () => {
             onChange={(e) => {
               setSkillInput(e.target.value);
             }}
-            className='input-skill'
+            className="input-skill"
           />
           <div className="input-count">{skillInput.length} /15</div>
 
@@ -189,7 +200,9 @@ const CreatePortfolio = () => {
         </div>
         <br />
       </div>
-      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit} className=" create-portfolio-btn btn">
+        Submit
+      </button>
     </div>
   );
 };

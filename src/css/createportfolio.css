@@ -15,15 +15,21 @@
   color: rgb(159, 56, 255);
 }
 .upload-photo-container {
-  border: 1px solid black;
+  border: 1px solid rgb(160, 160, 160);
   height: 13rem;
   width: 13rem;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
+  background-color: rgb(236, 236, 236);
+  cursor: pointer;
 }
-
+.upload-photo-container-icon{
+  font-size: 5rem;
+  color: rgb(160, 160, 160);
+}
 .photo {
   width: 100%;
 }
@@ -154,4 +160,10 @@
 }
 .skill-remove{
   cursor: pointer;
+}
+.create-portfolio-btn{
+  width: max-content;
+  min-width: none;
+  margin: 0 50%;
+  transform: translateX(-50%);
 }

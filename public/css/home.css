@@ -37,7 +37,7 @@ nav {
 }
 
 footer{
-    background-color: rgb(158, 158, 158);
+    background-color: rgb(218, 218, 218);
     display: flex;
     position: absolute;
     bottom: 0;
@@ -45,6 +45,7 @@ footer{
     justify-content: space-between;
     padding: 1.5rem 5%;
     font-size: 0.9rem;
+    font-weight: 600;
   
 }
 .logo {

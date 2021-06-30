@@ -9,7 +9,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-.content{
+.content {
   margin-top: 0rem;
 }
 nav {
@@ -20,26 +20,26 @@ nav {
   padding: 1rem 5%;
   position: relative;
 }
-.personal-nav-links{
+.personal-nav-links {
   width: 20%;
 }
-.personal-page-content{
-    min-height: 80vh;
-    width: 75%;
-    margin: 0rem auto;
-    padding: 4rem;
-    /* background-color: greenyellow; */
+.personal-page-content {
+  min-height: 80vh;
+  width: 75%;
+  margin: 0rem auto;
+  padding: 4rem;
+  /* background-color: greenyellow; */
 }
-.personal-subheading{
+.personal-subheading {
   margin-top: 2rem;
 }
-.intro-flex{
-    width: 100%;
-    display: flex;
-    /* background-color: silver; */
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 6rem;
+.intro-flex {
+  width: 100%;
+  display: flex;
+  /* background-color: silver; */
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6rem;
 }
 .photo-container {
   width: 14rem;
@@ -48,52 +48,49 @@ nav {
   border: 1px solid gray;
 }
 
-.personal-intro-text{
-    max-width: 80%;
-    word-break: break-all;
-    padding: 1rem 3rem;
-    margin-left: 0.5rem;
-
+.personal-intro-text {
+  max-width: 80%;
+  word-break: break-all;
+  padding: 1rem 3rem;
+  margin-left: 0.5rem;
 }
-.personal-intro{
-    color: black;
-    line-height: 1.7rem;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    text-transform: capitalize;
+.personal-intro {
+  color: black;
+  line-height: 1.7rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-transform: capitalize;
 }
-.personal-bio{
-    font-size: 0.85rem;
-    color: gray;
-    margin-bottom: 1rem;
-    /* margin-left: 0.5rem; */
-    width: 80%;
-    
+.personal-bio {
+  font-size: 0.85rem;
+  color: gray;
+  margin-bottom: 1rem;
+  /* margin-left: 0.5rem; */
+  width: 80%;
 }
-.personal-social-btns-container{
+.personal-social-btns-container {
   display: flex;
   align-items: center;
 }
-.personal-social-btns{
+.personal-social-btns {
   margin-right: 1rem;
   cursor: pointer;
   font-size: 1.25rem;
 }
-.photo-container{
+.photo-container {
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
-.personal-photo{
+.personal-photo {
   width: 105%;
 }
 
-
-.skills-container{
+.skills-container {
   margin-left: 0.3rem;
 }
-.personal-skill{
+.personal-skill {
   margin-right: 1rem;
   border: 1px solid gray;
   padding: 0.3rem;

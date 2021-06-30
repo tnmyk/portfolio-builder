@@ -30,7 +30,7 @@
 .username-hint{
     margin:2rem 0;
 }
-.get-username-btn{
+.btn{
     border: none;
     border-radius: 5px;
     min-width: 4rem;
