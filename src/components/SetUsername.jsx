@@ -21,7 +21,7 @@ const SetUsername = () => {
       db.collection("users").doc(currentUser.uid).set({
         email: currentUser.email,
         username: username,
-      });
+      },{merge:true});
       db.collection("username").doc(username).set({
         uid: currentUser.uid,
         email: currentUser.email,

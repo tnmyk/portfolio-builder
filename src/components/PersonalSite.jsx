@@ -4,6 +4,7 @@ import { db } from "../firebase";
 import Error from "./Error";
 import PersonalNav from "./personalComponents/PersonalNav";
 import SocialBtns from "./personalComponents/SocialBtns";
+import PersonalSkill from "./personalComponents/PersonalSkill";
 const PersonalSite = ({ setPersonal }) => {
   const { username } = useParams("");
   const [data, setData] = useState("");
@@ -43,6 +44,13 @@ const PersonalSite = ({ setPersonal }) => {
               <SocialBtns socialLinks={data.data.socialLinks} />
             </div>
           </div>
+          <h1 className="personal-subheading">Skills</h1>
+          <div className="skills-container">
+            {data.data.skillArr.map((skill) => {
+              return <PersonalSkill name={skill.name} key={skill.id} />;
+            })}
+          </div>
+          <h1 className="personal-subheading">Projects</h1>
         </div>
       </div>
     );
