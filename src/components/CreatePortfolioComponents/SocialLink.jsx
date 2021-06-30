@@ -69,7 +69,7 @@ const SocialLink = ({ name ,social,setSocial,socialLinks,setSocialLinks}) => {
           )}
         </div>
         {social[name] && (
-          <input type="text" value={socialLinks[name]} placeholder="Link 🔗" className="input-link" onChange={handleSocialLinkInput}></input>
+          <input type="text" autoFocus value={socialLinks[name]} placeholder="Link 🔗" className="input-link" onChange={handleSocialLinkInput}></input>
         )}
       </div>
     );

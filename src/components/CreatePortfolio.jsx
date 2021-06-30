@@ -41,7 +41,13 @@ const CreatePortfolio = () => {
     setForm({ ...form, [name]: value });
   };
   async function handleSubmit() {
-    if (!photo || skillArr.length ===0  ||form.intro.trim() === "" || form.bio.trim() === "") return alert('Please complete the form before submitting.');
+    if (
+      !photo ||
+      skillArr.length === 0 ||
+      form.intro.trim() === "" ||
+      form.bio.trim() === ""
+    )
+      return alert("Please complete the form before submitting.");
     if ((photo.size / 1024 / 1024).toFixed(4) > 1)
       return alert("Please Upload file less than 1MB");
     const storageRef = storage.ref();
@@ -53,7 +59,7 @@ const CreatePortfolio = () => {
         data: {
           socialLinks: socialLinks,
           form: form,
-          skillArr:skillArr,
+          skillArr: skillArr,
           photo: await fileRef.getDownloadURL(),
         },
       });
@@ -67,6 +73,7 @@ const CreatePortfolio = () => {
   const handleSkillInput = () => {
     if (skillArr.length === 5) return;
     setSkillInput("");
+    document.querySelector('.input-skill').focus()
     if (skillInput.trim() === "") return;
     setSkillArr([...skillArr, { name: skillInput, id: skillArr.length }]);
   };
@@ -155,17 +162,23 @@ const CreatePortfolio = () => {
             );
           })}
         </div>
-        <div className="input-hint">Tell people about your top 5 skills ({skillArr.length}/5)</div>
+        <div className="input-hint">
+          Tell people about your top 5 skills ({skillArr.length}/5)
+        </div>
 
-        <div className="input-skill-container">
+        <div className="input-container input-skill-container">
           <input
+            maxLength="15"
             type="text"
             placeholder="Skill Name"
             value={skillInput}
             onChange={(e) => {
               setSkillInput(e.target.value);
             }}
+            className='input-skill'
           />
+          <div className="input-count">{skillInput.length} /15</div>
+
           <FiSend className="send-skill-btn" onClick={handleSkillInput} />
         </div>
         <br />
