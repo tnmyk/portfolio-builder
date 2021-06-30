@@ -25,15 +25,17 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  
+  height: 4.3rem;
   left: 50%;
   transform: translateX(-50%);
-  padding: 1rem 5%;
+  /* padding: 1rem 5%; */
+  padding: 0rem 5%;
   position: fixed;
   top: 0;
   background-color: white;
   z-index: 11;
 }
+
 footer{
     background-color: rgb(158, 158, 158);
     display: flex;
@@ -48,6 +50,14 @@ footer{
 .logo {
   font-size: 1.5rem;
   z-index: 111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-img{
+  height: 3.5rem;
+  /* background-color: red; */
+  margin-top: 1rem;
 }
 .nav-links {
   display: flex;

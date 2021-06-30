@@ -29,9 +29,16 @@ const Nav = () => {
     }
     return (
       <nav>
-        <div className="logo">
-          <Link to="/">Portfolio</Link>
-        </div>
+        
+          <Link className="logo" to="/">
+            Portfolio Builder
+            {/* <img
+              src="\images\portfolio-builder-logo.svg"
+              alt=""
+              className='logo-img'
+            /> */}
+          </Link>
+       
         <div
           className={`${
             isMenuOpen ? "menu-active" : "menu-inactive"
@@ -52,18 +59,19 @@ const Nav = () => {
           {currentUser && (
             <div className="drop-btn-container" onClick={handleDropDown}>
               <TiArrowSortedDown className="drop-btn" />
-              {isDropDownOpen && <div className="dropdown-nav">
-                <button>
-                  Settings <FiSettings className="dropdown-item-icon" />
-                </button>
-                <button className='sign-out-btn' onClick={handleSignOut}>
-                  Sign out
-                  <BiLogInCircle className="dropdown-item-icon" />{" "}
-                </button>
-              </div>}
+              {isDropDownOpen && (
+                <div className="dropdown-nav">
+                  <button>
+                    Settings <FiSettings className="dropdown-item-icon" />
+                  </button>
+                  <button className="sign-out-btn" onClick={handleSignOut}>
+                    Sign out
+                    <BiLogInCircle className="dropdown-item-icon" />{" "}
+                  </button>
+                </div>
+              )}
             </div>
           )}
-          
         </div>
         <RiMenu4Fill className="menuBtn" onClick={handleMenu} />
       </nav>
