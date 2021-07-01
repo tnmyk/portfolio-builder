@@ -6,8 +6,7 @@ import {
   AiOutlineYoutube,
   AiOutlinePlus,
 } from "react-icons/ai";
-
-const SocialLink = ({ name ,social,setSocial,socialLinks,setSocialLinks}) => {
+const SocialLink = ({ name ,social,setSocial,socialLinks,setSocialLinks,edit}) => {
     
     const unselectedStyle={
         backgroundColor:''
@@ -54,7 +53,7 @@ const SocialLink = ({ name ,social,setSocial,socialLinks,setSocialLinks}) => {
 
     }
     return (
-      <div style={{position:'relative'}}>
+      <div style={{ position: "relative" }}>
         <div
           style={social[name] ? selectedStyle : unselectedStyle}
           className="social-link-choose-btn"
@@ -68,9 +67,27 @@ const SocialLink = ({ name ,social,setSocial,socialLinks,setSocialLinks}) => {
             <AiOutlinePlus className="add-icon" />
           )}
         </div>
-        {social[name] && (
-          <input type="text" autoFocus value={socialLinks[name]} placeholder="Link 🔗" className="input-link" onChange={handleSocialLinkInput}></input>
-        )}
+        {edit 
+          ?( social[name] && (
+              <input
+                type="text"
+                
+                value={socialLinks[name]}
+                placeholder="Link 🔗"
+                className="input-link"
+                onChange={handleSocialLinkInput}
+              ></input>
+            ))
+          : social[name] && (
+              <input
+                type="text"
+                autoFocus
+                value={socialLinks[name]}
+                placeholder="Link 🔗"
+                className="input-link"
+                onChange={handleSocialLinkInput}
+              ></input>
+            )}
       </div>
     );
 };

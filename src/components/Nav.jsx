@@ -52,7 +52,7 @@ const Nav = () => {
             </Link>
           )}
           {currentUser && (
-            <Link to="/dashboard" className="dashboard-btn">
+            <Link to="/dashboard" id="dashboard-btn">
               Dashboard
             </Link>
           )}

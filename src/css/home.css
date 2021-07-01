@@ -63,10 +63,7 @@ footer{
   border-radius: 5px;
   padding: 0.4rem;
 }
-.dashboard-btn{
-  color: #911cff;
-  font-weight: 700;
-}
+
 .drop-btn-container{
   cursor:pointer;
   background-color: rgb(230, 230, 230);

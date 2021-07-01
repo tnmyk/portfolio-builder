@@ -19,10 +19,10 @@ function Dashboard() {
           <div className="dashboard-page-btn">
             View Portfolio <ImNewTab className="dashboard-page-btn-icons" />
           </div>
-          <div className="dashboard-page-btn">
+          <Link to='/edit-portfolio' className="dashboard-page-btn">
             Update Portfolio
             <VscRefresh className="dashboard-page-btn-icons" />
-          </div>
+          </Link>
           <div className="dashboard-page-btn">
             Profile Settings <FiSettings className="dashboard-page-btn-icons" />
           </div>

@@ -7,10 +7,9 @@ import SocialLink from "./CreatePortfolioComponents/SocialLink";
 import Skill from "./CreatePortfolioComponents/Skill";
 import { FiSend } from "react-icons/fi";
 import { MdAddAPhoto } from "react-icons/md";
-import ScrollToTop from './ScrollToTop'
-const CreatePortfolio = () => {
+import ScrollToTop from "./ScrollToTop";
+const EditPortfolio = () => {
   const [creating, setCreating] = useState(false);
-
   const ReturnHtml = () => {
     const [skillArr, setSkillArr] = useState([]);
     const history = useHistory();
@@ -22,6 +21,7 @@ const CreatePortfolio = () => {
       "youtube",
     ];
     const { currentUser } = useAuth();
+
     const [photo, setPhoto] = useState();
     const [photoURL, setPhotoURL] = useState();
     const [social, setSocial] = useState({
@@ -47,20 +47,32 @@ const CreatePortfolio = () => {
       const { value, name } = e.target;
       setForm({ ...form, [name]: value });
     };
+    function getData() {
+      db.collection("users")
+        .doc(currentUser.uid)
+        .get()
+        .then((docSnap) => {
+          const data = docSnap.data();
+          setForm(data.data.form);
+          setSkillArr(data.data.skillArr);
+          setSocialLinks(data.data.socialLinks);
+          setPhotoURL(data.data.photo);
+        });
+    }
     async function handleSubmit() {
       if (
-        !photo ||
         skillArr.length === 0 ||
         form.intro.trim() === "" ||
         form.bio.trim() === ""
       )
         return alert("Please complete the form before submitting.");
-      if ((photo.size / 1024 / 1024).toFixed(4) > 1)
-        return alert("Please Upload file less than 1MB");
+      if (photo)
+        if ((photo.size / 1024 / 1024).toFixed(4) > 1)
+          return alert("Please Upload file less than 1MB");
       setCreating(true);
       const storageRef = storage.ref();
       const fileRef = storageRef.child(currentUser.uid);
-      await fileRef.put(photo);
+      if (photo) await fileRef.put(photo);
       db.collection("users")
         .doc(currentUser.uid)
         .update({
@@ -81,7 +93,7 @@ const CreatePortfolio = () => {
         });
     }
     const handleUpload = (e) => {
-      if(!e.target.files[0]) return setPhotoURL('');
+      if (!e.target.files[0]) return setPhotoURL("");
       var file = e.target.files[0];
       var url = URL.createObjectURL(file);
       setPhoto(file);
@@ -94,18 +106,30 @@ const CreatePortfolio = () => {
       if (skillInput.trim() === "") return;
       setSkillArr([...skillArr, { name: skillInput, id: skillArr.length }]);
     };
-    useEffect(() => {
+    useEffect(function () {
       document
         .querySelector(".upload-photo-container")
         .addEventListener("click", () => {
           document.querySelector("#input-photo").click();
         });
-    }, []);
+      getData();
+      // eslint-disable-next-line
+    }, []); 
+    useEffect(() => {
+      for (let x in social) {
+        if (socialLinks[x].trim() !== "") {
+          social[x] = true;
+          setSocial({ ...social, [x]: true });
+        }
+      }
+      // eslint-disable-next-line
+    }, [socialLinks]); 
+
     return (
       <div className="page">
-        <h1 className="create-portfolio-heading">Create Portfolio</h1>
+        <h1 className="create-portfolio-heading">Update Portfolio</h1>
         <h2 className="create-portfolio-steps">
-          Step 1 : Upload your Professional Photograph
+          Update your Professional Photograph
         </h2>
         <div className="upload-photo align-middle">
           <div className="upload-photo-container">
@@ -122,7 +146,7 @@ const CreatePortfolio = () => {
             onChange={handleUpload}
           />
         </div>
-        <h2 className="create-portfolio-steps">Step 2 : Enter Your Details</h2>
+        <h2 className="create-portfolio-steps"> Update Details</h2>
         <div className=" align-middle">
           <div className="input-container">
             <input
@@ -154,7 +178,7 @@ const CreatePortfolio = () => {
             Tell something interesting about yourself in 150 characters
           </div>
         </div>
-        <h2 className="create-portfolio-steps">Step 3 : Social Links</h2>
+        <h2 className="create-portfolio-steps">Update Social Links</h2>
         <div className="align-middle">
           <div className="input-hint">
             Choose the social media sites you are active on
@@ -169,13 +193,12 @@ const CreatePortfolio = () => {
                 socialLinks={socialLinks}
                 setSocialLinks={setSocialLinks}
                 key={index}
+                edit={true}
               />
             );
           })}
         </div>
-        <h2 className="create-portfolio-steps">
-          Step 4 : Display Your Top-Skills
-        </h2>
+        <h2 className="create-portfolio-steps">Update Skills</h2>
         <div className="align-middle">
           <div className="skills-container">
             {skillArr.map((skill, index) => {
@@ -212,7 +235,7 @@ const CreatePortfolio = () => {
           <br />
         </div>
         <button onClick={handleSubmit} className=" create-portfolio-btn btn">
-          Submit
+          Update
         </button>
       </div>
     );
@@ -220,13 +243,13 @@ const CreatePortfolio = () => {
   const CreatingLoader = () => {
     return (
       <div className="loading-gif-container">
-        <ScrollToTop/>
+        <ScrollToTop />
         <img src="/images/loading.gif" alt="" className="loading-gif" />
-        <h4>Creating your portfolio...</h4>
+        <h4 style={{color:'purple'}}>Updating your portfolio...</h4>
       </div>
     );
   };
-  return <>{creating ? <CreatingLoader /> : <ReturnHtml />}</>;
+  return <>{!creating ? <CreatingLoader /> : <ReturnHtml />}</>;
 };
 
-export default CreatePortfolio;
+export default EditPortfolio;
