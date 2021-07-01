@@ -249,7 +249,7 @@ const EditPortfolio = () => {
       </div>
     );
   };
-  return <>{!creating ? <CreatingLoader /> : <ReturnHtml />}</>;
+  return <>{creating ? <CreatingLoader /> : <ReturnHtml />}</>;
 };
 
 export default EditPortfolio;

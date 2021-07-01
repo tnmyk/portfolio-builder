@@ -15,6 +15,9 @@ const SetUsername = () => {
   async function handleSubmitUsername() {
     try {
       if (loading !== "available") return;
+      await currentUser.updateProfile({
+        displayName: username,
+      }); //history push after delay
       await db.collection("username").where("uid", "==", currentUser.uid).get().then((docSnapshot)=>{
         docSnapshot.forEach(doc=>{
           doc.ref.delete()

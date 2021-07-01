@@ -121,11 +121,11 @@ footer {
   margin-left: 0.5rem;
 }
 .dropdown-nav button:hover {
-  background-color: rgb(189, 189, 189);
+  background-color: rgb(202, 202, 202);
 }
 .sign-out-btn {
   font-weight: 600;
-  color: rgb(255, 73, 73);
+  color: rgb(255, 7, 7);
 }
 .menuBtn {
   display: none;
