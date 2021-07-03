@@ -7,7 +7,9 @@ import SocialLink from "./CreatePortfolioComponents/SocialLink";
 import Skill from "./CreatePortfolioComponents/Skill";
 import { FiSend } from "react-icons/fi";
 import { MdAddAPhoto } from "react-icons/md";
-import ScrollToTop from './ScrollToTop'
+import ScrollToTop from "./ScrollToTop";
+import CreateProject from "./CreatePortfolioComponents/CreateProject";
+import CreateProjectsComponent from "./CreatePortfolioComponents/CreateProjectsComponent";
 const CreatePortfolio = () => {
   const [creating, setCreating] = useState(false);
 
@@ -21,6 +23,7 @@ const CreatePortfolio = () => {
       "facebook",
       "youtube",
     ];
+    const [projects, setProjects] = useState([]);
     const { currentUser } = useAuth();
     const [photo, setPhoto] = useState();
     const [photoURL, setPhotoURL] = useState();
@@ -59,7 +62,7 @@ const CreatePortfolio = () => {
         return alert("Please Upload file less than 1MB");
       setCreating(true);
       const storageRef = storage.ref();
-      const fileRef = storageRef.child(currentUser.uid);
+      const fileRef = storageRef.child("/" + currentUser.uid + "/profile");
       await fileRef.put(photo);
       db.collection("users")
         .doc(currentUser.uid)
@@ -69,6 +72,7 @@ const CreatePortfolio = () => {
             form: form,
             skillArr: skillArr,
             photo: await fileRef.getDownloadURL(),
+            projects: projects,
           },
         })
         .then(() => {
@@ -81,7 +85,7 @@ const CreatePortfolio = () => {
         });
     }
     const handleUpload = (e) => {
-      if(!e.target.files[0]) return setPhotoURL('');
+      if (!e.target.files[0]) return setPhotoURL("");
       var file = e.target.files[0];
       var url = URL.createObjectURL(file);
       setPhoto(file);
@@ -132,6 +136,7 @@ const CreatePortfolio = () => {
               placeholder="Intro"
               onChange={handleForm}
               value={form.intro}
+              className="input-intro"
             />
             <div className="input-count">{form.intro.length} /25</div>
           </div>
@@ -147,6 +152,7 @@ const CreatePortfolio = () => {
               placeholder="Your Bio"
               onChange={handleForm}
               value={form.bio}
+              className="input-bio"
             ></textarea>
             <div className="input-count">{form.bio.length} /150</div>
           </div>
@@ -211,6 +217,15 @@ const CreatePortfolio = () => {
           </div>
           <br />
         </div>
+        {/*  */}
+        <h2 className="create-portfolio-steps">
+          Step 5 : Display Your Best Projects
+        </h2>
+        <CreateProjectsComponent
+          projects={projects}
+          CreateProject={CreateProject}
+          setProjects={setProjects}
+        />
         <button onClick={handleSubmit} className=" create-portfolio-btn btn">
           Submit
         </button>
@@ -220,7 +235,7 @@ const CreatePortfolio = () => {
   const CreatingLoader = () => {
     return (
       <div className="loading-gif-container">
-        <ScrollToTop/>
+        <ScrollToTop />
         <img src="/images/loading.gif" alt="" className="loading-gif" />
         <h4>Creating your portfolio...</h4>
       </div>

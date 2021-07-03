@@ -8,6 +8,8 @@ import Skill from "./CreatePortfolioComponents/Skill";
 import { FiSend } from "react-icons/fi";
 import { MdAddAPhoto } from "react-icons/md";
 import ScrollToTop from "./ScrollToTop";
+import CreateProject from "./CreatePortfolioComponents/CreateProject";
+import CreateProjectsComponent from "./CreatePortfolioComponents/CreateProjectsComponent";
 const EditPortfolio = () => {
   const [creating, setCreating] = useState(false);
   const ReturnHtml = () => {
@@ -38,6 +40,7 @@ const EditPortfolio = () => {
       youtube: "",
       twitter: "",
     });
+    const [projects, setProjects] = useState([]);
     const [form, setForm] = useState({
       intro: "",
       bio: "",
@@ -57,6 +60,8 @@ const EditPortfolio = () => {
           setSkillArr(data.data.skillArr);
           setSocialLinks(data.data.socialLinks);
           setPhotoURL(data.data.photo);
+          setProjects(data.data.projects);
+          
         });
     }
     async function handleSubmit() {
@@ -81,6 +86,7 @@ const EditPortfolio = () => {
             form: form,
             skillArr: skillArr,
             photo: await fileRef.getDownloadURL(),
+            projects:projects
           },
         })
         .then(() => {
@@ -156,6 +162,7 @@ const EditPortfolio = () => {
               placeholder="Intro"
               onChange={handleForm}
               value={form.intro}
+              className="input-intro"
             />
             <div className="input-count">{form.intro.length} /25</div>
           </div>
@@ -171,6 +178,7 @@ const EditPortfolio = () => {
               placeholder="Your Bio"
               onChange={handleForm}
               value={form.bio}
+              className="input-bio"
             ></textarea>
             <div className="input-count">{form.bio.length} /150</div>
           </div>
@@ -234,6 +242,16 @@ const EditPortfolio = () => {
           </div>
           <br />
         </div>
+        {/* edit */}
+        <h2 className="create-portfolio-steps">
+          Step 5 : Display Your Best Projects
+        </h2>
+        <CreateProjectsComponent
+          projects={projects}
+          CreateProject={CreateProject}
+          setProjects={setProjects}
+          edit={true}
+        />
         <button onClick={handleSubmit} className=" create-portfolio-btn btn">
           Update
         </button>

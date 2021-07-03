@@ -8,7 +8,12 @@
   user-select: none;
   font-family: "Poppins", sans-serif;
 }
-
+*:first-letter{
+  text-transform: capitalize;
+}
+.logo a:first-letter{
+  text-transform: none;
+}
 .content {
   margin-top: 0rem;
 }
@@ -95,4 +100,16 @@ nav {
   border: 1px solid gray;
   padding: 0.3rem;
   border-radius: 7px;
+}
+
+.project-snippet{
+  font-size: 0.8rem;
+  width: 97%;
+  margin-left: 0.1rem;
+  /* background-color: hotpink; */
+  word-break: break-all;
+}
+.project-name{
+  width: 97%;
+  margin-top: 0.5rem;
 }

@@ -5,6 +5,7 @@ import Error from "./Error";
 import PersonalNav from "./personalComponents/PersonalNav";
 import SocialBtns from "./personalComponents/SocialBtns";
 import PersonalSkill from "./personalComponents/PersonalSkill";
+import PersonalProject from "./personalComponents/PersonalProject";
 const PersonalSite = ({ setPersonal }) => {
   const { username } = useParams("");
   const [data, setData] = useState("");
@@ -51,6 +52,18 @@ const PersonalSite = ({ setPersonal }) => {
             })}
           </div>
           <h1 className="personal-subheading">Projects</h1>
+          <div className="projects-grid personal-projects-grid">
+            {data.data.projects.map((project) => {
+              return (
+                <PersonalProject
+                  name={project.name}
+                  key={project.id}
+                  photo={project.photo}
+                  snippet={project.snippet}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     );

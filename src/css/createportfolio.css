@@ -37,8 +37,8 @@
   margin-top: 2rem;
   margin-left: 5rem;
 }
-.text-area-container textarea,
-.input-container input {
+.input-bio,
+.input-intro {
   padding: 0.5rem;
   border: none;
   border: 1px solid gray;
@@ -166,4 +166,76 @@
   min-width: none;
   margin: 0 50%;
   transform: translateX(-50%);
+}
+.projects-grid{
+  margin-top: 1rem;
+  width: 100%;
+  min-height: 11rem;
+  display: grid;
+  gap: 3.5rem 3rem;
+  grid-template-columns: repeat(auto-fit,minmax(17rem,19rem));
+}
+.personal-projects-grid{
+  margin-top: 2rem;
+  width: 85%;
+  justify-content: space-between;
+
+}
+.project{
+  overflow: hidden;
+}
+.project-image-container{
+  background-color: gainsboro;
+  /* width: 19rem; */
+  height:12rem;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+.project-image{
+  width: 100%;
+}
+
+.input-project-container{
+  margin-top: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+.input-project-name{
+  padding: 0.2rem;
+  font-size: 0.9rem;
+  margin-top: 0;
+  width: 96%;
+  border: none;
+  border: 1px solid gray;
+  font-weight: 600;
+  border-radius: 7px;
+  text-transform: capitalize;
+}
+.input-project-snippet{
+  width: 96%;
+  padding: 0.2rem;
+  height: 4.5rem;
+  border-radius: 7px;
+  border: none;
+  border: 1px solid gray;
+
+}
+.project-delete-btn{
+  margin: 0 auto;
+  font-size: 0.7rem;
+  padding:0.3rem;
+  border-radius: 8px;
+  border: none;
+  background-color: red;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.add-project-icon{
+  color: gray;
+  font-size: 5rem;
 }
