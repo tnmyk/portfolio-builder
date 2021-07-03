@@ -11,9 +11,10 @@ const CreateProject = ({ index, setProjects, projects, id, inputId,edit }) => {
     setProjectForm({ ...projectForm, [e.target.name]: e.target.value });
   };
   useEffect(()=>{
-    if(!edit)return;
+    if (!edit) return;
     console.log(projectForm.photo);
-    setPhotoURL(projectForm.photo)
+    setPhotoURL(projectForm.photo);
+    // eslint-disable-next-line
   },[])
   useEffect(() => {
     tempProjects[index] = projectForm;
