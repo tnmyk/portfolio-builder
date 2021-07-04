@@ -4,7 +4,7 @@ const Home = () => {
       <div className="intro">
         <div className="intro-text">
           <h1>Create Your Own Portfolio Page</h1>
-          <h2>Make Your Presence More Noticable</h2>
+          <h2>Make Your Presence More Noticeable</h2>
         </div>
         <div className="intro-image">
           <img alt="" src="./images/blob.svg" className="blob" />
