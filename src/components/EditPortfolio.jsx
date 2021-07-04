@@ -12,6 +12,7 @@ import CreateProject from "./CreatePortfolioComponents/CreateProject";
 import CreateProjectsComponent from "./CreatePortfolioComponents/CreateProjectsComponent";
 const EditPortfolio = () => {
   const [creating, setCreating] = useState(false);
+  const [loading,setLoading] =useState(true) 
   const ReturnHtml = () => {
     const [skillArr, setSkillArr] = useState([]);
     const history = useHistory();
@@ -56,12 +57,14 @@ const EditPortfolio = () => {
         .get()
         .then((docSnap) => {
           const data = docSnap.data();
-          setForm(data.data.form);
-          setSkillArr(data.data.skillArr);
-          setSocialLinks(data.data.socialLinks);
-          setPhotoURL(data.data.photo);
-          setProjects(data.data.projects);
+          if (!data.data) {return history.push('/create-portfolio')};
           
+          if(data.data.form) setForm(data.data.form);
+          if (data.data.skillArr) setSkillArr(data.data.skillArr);
+          if (data.data.socialLinks) setSocialLinks(data.data.socialLinks);
+         if (data.data.photo) setPhotoURL(data.data.photo);
+         if (data.data.projects) setProjects(data.data.projects);
+           setLoading(false);
         });
     }
     async function handleSubmit() {
@@ -113,14 +116,14 @@ const EditPortfolio = () => {
       setSkillArr([...skillArr, { name: skillInput, id: skillArr.length }]);
     };
     useEffect(function () {
-      document
+      if (!loading) document
         .querySelector(".upload-photo-container")
         .addEventListener("click", () => {
           document.querySelector("#input-photo").click();
         });
       getData();
       // eslint-disable-next-line
-    }, []); 
+    }, [loading]); 
     useEffect(() => {
       for (let x in social) {
         if (socialLinks[x].trim() !== "") {
@@ -133,141 +136,158 @@ const EditPortfolio = () => {
 
     return (
       <div className="page">
-        <h1 className="create-portfolio-heading">Update Portfolio</h1>
-        <h2 className="create-portfolio-steps">
-          Update your Professional Photograph
-        </h2>
-        <div className="upload-photo align-middle">
-          <div className="upload-photo-container">
-            {photoURL ? (
-              <img src={photoURL} alt="" className="photo" />
-            ) : (
-              <MdAddAPhoto className="upload-photo-container-icon" />
-            )}
-          </div>
-          <input
-            type="file"
-            name="photo"
-            id="input-photo"
-            onChange={handleUpload}
-          />
-        </div>
-        <h2 className="create-portfolio-steps"> Update Details</h2>
-        <div className=" align-middle">
-          <div className="input-container">
-            <input
-              maxLength="25"
-              type="text"
-              name="intro"
-              placeholder="Intro"
-              onChange={handleForm}
-              value={form.intro}
-              className="input-intro"
-            />
-            <div className="input-count">{form.intro.length} /25</div>
-          </div>
-          <div className="input-hint">Ex: Hi!👋 My name is Tanmay</div>
-          <div className="input-hint">
-            You can leave it as your name only if you want
-          </div>
-
-          <div className="text-area-container">
-            <textarea
-              maxLength="150"
-              name="bio"
-              placeholder="Your Bio"
-              onChange={handleForm}
-              value={form.bio}
-              className="input-bio"
-            ></textarea>
-            <div className="input-count">{form.bio.length} /150</div>
-          </div>
-          <div className="input-hint">
-            Tell something interesting about yourself in 150 characters
-          </div>
-        </div>
-        <h2 className="create-portfolio-steps">Update Social Links</h2>
-        <div className="align-middle">
-          <div className="input-hint">
-            Choose the social media sites you are active on
-          </div>{" "}
-          <br />
-          {socialLinkArr.map((link, index) => {
-            return (
-              <SocialLink
-                name={link}
-                social={social}
-                setSocial={setSocial}
-                socialLinks={socialLinks}
-                setSocialLinks={setSocialLinks}
-                key={index}
-                edit={true}
+        {!loading ? (
+          <>
+            <h1 className="create-portfolio-heading">Update Portfolio</h1>
+            <h2 className="create-portfolio-steps">
+              Update your Professional Photograph
+            </h2>
+            <div className="upload-photo align-middle">
+              <div className="upload-photo-container">
+                {photoURL ? (
+                  <img src={photoURL} alt="" className="photo" />
+                ) : (
+                  <MdAddAPhoto className="upload-photo-container-icon" />
+                )}
+              </div>
+              <input
+                type="file"
+                name="photo"
+                id="input-photo"
+                onChange={handleUpload}
               />
-            );
-          })}
-        </div>
-        <h2 className="create-portfolio-steps">Update Skills</h2>
-        <div className="align-middle">
-          <div className="skills-container">
-            {skillArr.map((skill, index) => {
-              return (
-                <Skill
-                  name={skill.name}
-                  id={skill.id}
-                  skillArr={skillArr}
-                  setSkillArr={setSkillArr}
-                  key={skill.id}
+            </div>
+            <h2 className="create-portfolio-steps"> Update Details</h2>
+            <div className=" align-middle">
+              <div className="input-container">
+                <input
+                  maxLength="25"
+                  type="text"
+                  name="intro"
+                  placeholder="Intro"
+                  onChange={handleForm}
+                  value={form.intro}
+                  className="input-intro"
                 />
-              );
-            })}
-          </div>
-          <div className="input-hint">
-            Tell people about your top 5 skills ({skillArr.length}/5)
-          </div>
+                <div className="input-count">{form.intro.length} /25</div>
+              </div>
+              <div className="input-hint">Ex: Hi!👋 My name is Tanmay</div>
+              <div className="input-hint">
+                You can leave it as your name only if you want
+              </div>
 
-          <div className="input-container input-skill-container">
-            <input
-              maxLength="15"
-              type="text"
-              placeholder="Skill Name"
-              value={skillInput}
-              onChange={(e) => {
-                setSkillInput(e.target.value);
-              }}
-              className="input-skill"
+              <div className="text-area-container">
+                <textarea
+                  maxLength="150"
+                  name="bio"
+                  placeholder="Your Bio"
+                  onChange={handleForm}
+                  value={form.bio}
+                  className="input-bio"
+                ></textarea>
+                <div className="input-count">{form.bio.length} /150</div>
+              </div>
+              <div className="input-hint">
+                Tell something interesting about yourself in 150 characters
+              </div>
+            </div>
+            <h2 className="create-portfolio-steps">Update Social Links</h2>
+            <div className="align-middle">
+              <div className="input-hint">
+                Choose the social media sites you are active on
+              </div>{" "}
+              <br />
+              {socialLinkArr.map((link, index) => {
+                return (
+                  <SocialLink
+                    name={link}
+                    social={social}
+                    setSocial={setSocial}
+                    socialLinks={socialLinks}
+                    setSocialLinks={setSocialLinks}
+                    key={index}
+                    edit={true}
+                  />
+                );
+              })}
+            </div>
+            <h2 className="create-portfolio-steps">Update Skills</h2>
+            <div className="align-middle">
+              <div className="skills-container">
+                {skillArr && skillArr.map((skill, index) => {
+                  return (
+                    <Skill
+                      name={skill.name}
+                      id={skill.id}
+                      skillArr={skillArr}
+                      setSkillArr={setSkillArr}
+                      key={skill.id}
+                    />
+                  );
+                })}
+              </div>
+              <div className="input-hint">
+                Tell people about your top 5 skills ({skillArr.length}/5)
+              </div>
+
+              <div className="input-container input-skill-container">
+                <input
+                  maxLength="15"
+                  type="text"
+                  placeholder="Skill Name"
+                  value={skillInput}
+                  onChange={(e) => {
+                    setSkillInput(e.target.value);
+                  }}
+                  className="input-skill"
+                />
+                <div className="input-count">{skillInput.length} /15</div>
+
+                <FiSend className="send-skill-btn" onClick={handleSkillInput} />
+              </div>
+              <br />
+            </div>
+            {/* edit */}
+            <h2 className="create-portfolio-steps">
+              Step 5 : Display Your Best Projects
+            </h2>
+            <CreateProjectsComponent
+              projects={projects}
+              CreateProject={CreateProject}
+              setProjects={setProjects}
+              edit={true}
             />
-            <div className="input-count">{skillInput.length} /15</div>
-
-            <FiSend className="send-skill-btn" onClick={handleSkillInput} />
-          </div>
-          <br />
-        </div>
-        {/* edit */}
-        <h2 className="create-portfolio-steps">
-          Step 5 : Display Your Best Projects
-        </h2>
-        <CreateProjectsComponent
-          projects={projects}
-          CreateProject={CreateProject}
-          setProjects={setProjects}
-          edit={true}
-        />
-        <button onClick={handleSubmit} className=" create-portfolio-btn btn">
-          Update
-        </button>
+            <button
+              onClick={handleSubmit}
+              className=" create-portfolio-btn btn"
+            >
+              Update
+            </button>
+          </>
+        ) : (
+          <CreatingLoader text='Loading your portfolio...' />
+        )}
       </div>
     );
   };
-  const CreatingLoader = () => {
+  const CreatingLoader = ({text}) => {
     return (
       <div className="loading-gif-container">
         <ScrollToTop />
         <img src="/images/loading.gif" alt="" className="loading-gif" />
-        <h4 style={{color:'purple'}}>Updating your portfolio...</h4>
+        <h4 style={{color:'purple'}}>{text}</h4>
       </div>
     );
   };
-  return <>{creating ? <CreatingLoader /> : <ReturnHtml />}</>;
+  return (
+    <>
+      {creating ? (
+        <CreatingLoader text="Updating your portfolio..." />
+      ) : (
+        <ReturnHtml />
+      )}
+    </>
+  );
 };
 
 export default EditPortfolio;

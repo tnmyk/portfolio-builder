@@ -51,19 +51,23 @@ const PersonalSite = ({ setPersonal }) => {
               return <PersonalSkill name={skill.name} key={skill.id} />;
             })}
           </div>
-          <h1 className="personal-subheading">Projects</h1>
-          <div className="projects-grid personal-projects-grid">
-            {data.data.projects.map((project) => {
-              return (
-                <PersonalProject
-                  name={project.name}
-                  key={project.id}
-                  photo={project.photo}
-                  snippet={project.snippet}
-                />
-              );
-            })}
-          </div>
+          {data.data.projects && (
+            <>
+              <h1 className="personal-subheading">Projects</h1>
+              <div className="projects-grid personal-projects-grid">
+                {data.data.projects.map((project) => {
+                  return (
+                    <PersonalProject
+                      name={project.name}
+                      key={project.id}
+                      photo={project.photo}
+                      snippet={project.snippet}
+                    />
+                  );
+                })}
+              </div>
+            </>
+          )}
         </div>
       </div>
     );

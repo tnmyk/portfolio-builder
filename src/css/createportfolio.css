@@ -176,7 +176,7 @@
   grid-template-columns: repeat(auto-fit,minmax(17rem,19rem));
 }
 .personal-projects-grid{
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   width: 85%;
   justify-content: space-between;
 
@@ -186,6 +186,7 @@
 }
 .project-image-container{
   background-color: gainsboro;
+  border: 1px solid gainsboro;
   /* width: 19rem; */
   height:12rem;
   border-radius: 8px;
@@ -197,7 +198,7 @@
   overflow: hidden;
 }
 .project-image{
-  width: 100%;
+  height: 100%;
 }
 
 .input-project-container{
