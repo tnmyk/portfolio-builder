@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
+import { useState, useEffect } from "react";
 import {storage} from '../../firebase'
 import { useAuth } from "../../context/AuthContext";
 const CreateProject = ({ index, setProjects, projects, id, inputId,edit }) => {
