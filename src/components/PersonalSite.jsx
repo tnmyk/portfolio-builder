@@ -55,13 +55,14 @@ const PersonalSite = ({ setPersonal }) => {
             <>
               <h1 className="personal-subheading">Projects</h1>
               <div className="projects-grid personal-projects-grid">
-                {data.data.projects.map((project) => {
+                {data.data.projects.map((project,index) => {
                   return (
                     <PersonalProject
                       name={project.name}
                       key={project.id}
                       photo={project.photo}
                       snippet={project.snippet}
+                      index={index+1}
                     />
                   );
                 })}

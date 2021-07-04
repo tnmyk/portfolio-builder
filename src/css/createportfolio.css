@@ -47,6 +47,10 @@
   font-weight: 600;
   width: 18rem;
 }
+.input-bio{
+  /* overflow-wrap: break-word;
+  white-space: pre-line; */
+}
 .input-container,
 .text-area-container {
   position: relative;

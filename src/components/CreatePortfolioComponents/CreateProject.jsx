@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import {storage} from '../../firebase'
 import { useAuth } from "../../context/AuthContext";
-const CreateProject = ({ index, setProjects, projects, id, inputId,edit }) => {
+import { MdAddAPhoto } from "react-icons/md";
+
+const CreateProject = ({ index, setProjects, projects, id, inputId,edit,personal }) => {
   const {currentUser} = useAuth()
   const [projectForm, setProjectForm] = useState(projects[index]);
   const [photoURL, setPhotoURL] = useState();
@@ -56,7 +58,7 @@ const CreateProject = ({ index, setProjects, projects, id, inputId,edit }) => {
         id={inputId}
       />
       <div className="project-image-container" onClick={handleImgClick}>
-        {<img src={photoURL} alt="" className="project-image" />}
+        {photoURL? <img src={photoURL} alt="" className="project-image" />:<MdAddAPhoto className='add-project-icon'/>}
       </div>
       <div className="input-container input-project-container">
         <input
