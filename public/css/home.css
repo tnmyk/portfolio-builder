@@ -138,9 +138,7 @@ footer {
 .content {
   margin-top: 4rem;
   padding-bottom: 14rem;
-  display: flex;
-  justify-content: center;
-}
+ }
 .page {
   width: 90%;
   margin: 0rem auto;
@@ -220,12 +218,18 @@ footer {
   .active-on-mobile {
     display: block;
   }
+  .content {
+  
+  display: flex;
+  justify-content: center;
+}
   html {
     font-size: 13px;
   }
   .menuBtn {
     display: block;
   }
+  
   .nav-links {
     flex-direction: column;
     position: absolute;
