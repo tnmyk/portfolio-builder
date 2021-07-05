@@ -79,6 +79,7 @@ const SetUsername = () => {
           placeholder="Username"
           value={username}
           onChange={handleUsername}
+          className='input-intro'
         />
 
         <Load />
