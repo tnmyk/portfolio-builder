@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { RiMenu4Fill } from "react-icons/ri";
 import { useAuth } from "../context/AuthContext";
@@ -25,12 +25,11 @@ const Nav = () => {
       console.log(err);
     }
   }
-  
+
   document.querySelectorAll(".mobile-nav-link").forEach((temp) => {
-    temp.addEventListener("click", ()=>{
-      setMenuOpen(false)
+    temp.addEventListener("click", () => {
+      setMenuOpen(false);
     });
-    
   });
   return (
     <nav>
@@ -63,6 +62,17 @@ const Nav = () => {
           <Link to="/dashboard" id="dashboard-btn" className="mobile-nav-link">
             Dashboard
           </Link>
+        )}
+        {currentUser && (
+          <>
+            <Link to="settings" className="active-on-mobile">
+              Settings
+            </Link>
+
+            <Link to="/" onClick={handleSignOut} className="active-on-mobile">
+              Sign out
+            </Link>
+          </>
         )}
         {currentUser && (
           <div className="drop-btn-container" onClick={handleDropDown}>

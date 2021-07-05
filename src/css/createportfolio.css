@@ -36,6 +36,8 @@
 #input-photo {
   margin-top: 2rem;
   margin-left: 5rem;
+  width: 15rem;
+  
 }
 .input-bio,
 .input-intro {
@@ -50,7 +52,7 @@
 .input-bio{
   white-space: pre-line;
   overflow-wrap:break-word ;
-  
+ 
 }
 .input-container,
 .text-area-container {
@@ -63,7 +65,7 @@
   margin-top: 1rem;
 }
 .text-area-container textarea {
-  width: 25rem;
+   width: 25rem;
   height: 10rem;
 }
 .input-count {
@@ -139,8 +141,9 @@
 }
 .skills-container {
   display: flex;
-  width: 90%;
-  height: 3rem;
+  max-width: 90%;
+  
+  height: 4rem;
   /* background-color: hotpink; */
   overflow: auto;
   margin-bottom: 1rem;
@@ -160,17 +163,17 @@
   margin-right: 1rem;
   display: flex;
   align-items: center;
-  min-width: 5rem;
+  /* min-width: 5rem; */
+  width: max-content;
   justify-content: space-between;
 }
 .skill-remove{
   cursor: pointer;
 }
 .create-portfolio-btn{
-  width: max-content;
-  min-width: none;
-  margin: 0 50%;
-  transform: translateX(-50%);
+  width: min-content;
+  display: block;
+  margin: 0 auto;
 }
 .projects-grid{
   margin-top: 1rem;
@@ -244,4 +247,31 @@
 .add-project-icon{
   color: gray;
   font-size: 5rem;
+}
+@media only screen and (max-width:600px) {
+  .text-area-container textarea{
+    width: 21rem
+  }
+  .social-link-choose-btn{
+    margin-bottom: 3rem;
+  }
+  .input-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: auto;
+  bottom: 0.5rem;
+  padding: 0.2rem;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+  .skills-container::-webkit-scrollbar{
+    height: 4px;
+  }
+  
+  
+  .skills-container::-webkit-scrollbar-thumb{
+    background-color: black;
+  }
 }

@@ -7,6 +7,7 @@
   font-family: "Poppins", sans-serif;
   outline: none;
   user-select: none;
+  /* outline: 1px solid #f00 !important; */
 }
 /* color: rgb(221, 184, 255); */
 html {
@@ -114,9 +115,12 @@ footer {
   transition: background-color 0.5s;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .dropdown-item-icon {
   margin-left: 0.5rem;
+  width: min-content;
+  height: min-content;
 }
 .dropdown-nav button:hover {
   background-color: rgb(202, 202, 202);
@@ -131,15 +135,17 @@ footer {
   z-index: 111;
 }
 
-
 .content {
   margin-top: 4rem;
   padding-bottom: 14rem;
+  display: flex;
+  justify-content: center;
 }
 .page {
   width: 90%;
   margin: 0rem auto;
   padding-top: 1.5rem;
+  
 }
 .intro {
   display: flex;
@@ -208,10 +214,14 @@ footer {
   justify-content: center;
 }
 
-
-
+.active-on-mobile {
+  display: none;
+}
 
 @media only screen and (max-width: 600px) {
+  .active-on-mobile {
+    display: block;
+  }
   html {
     font-size: 13px;
   }
@@ -229,20 +239,28 @@ footer {
     transition: 1s;
     overflow: hidden;
   }
-  .page{
+  .drop-btn-container {
+    display: none;
+  }
+  .nav-links * {
+    margin-bottom: 1rem;
+  }
+  .nav-links a {
+    font-size: 1.3rem;
+  }
+  .page {
     width: 90%;
   }
   .intro {
     flex-direction: column;
-    
   }
-  .intro-text{
+  .intro-text {
     width: 100%;
   }
-  footer{
+  footer {
     flex-direction: column;
   }
-  footer *{
+  footer * {
     margin-bottom: 0.4rem;
   }
   .intro-text h1 {
