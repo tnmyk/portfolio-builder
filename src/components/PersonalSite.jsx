@@ -41,7 +41,9 @@ const PersonalSite = ({ setPersonal }) => {
             </div>
             <div className="personal-intro-text">
               <h3 className="personal-intro">{data.data.form.intro}</h3>
-              <p className="personal-bio">{data.data.form.bio}</p>
+              <p className="personal-bio">
+                {data.data.form.bio.replace(/[\r\n]+/g, "\n")}
+              </p>
               <SocialBtns socialLinks={data.data.socialLinks} />
             </div>
           </div>
@@ -55,14 +57,14 @@ const PersonalSite = ({ setPersonal }) => {
             <>
               <h1 className="personal-subheading">Projects</h1>
               <div className="projects-grid personal-projects-grid">
-                {data.data.projects.map((project,index) => {
+                {data.data.projects.map((project, index) => {
                   return (
                     <PersonalProject
                       name={project.name}
                       key={project.id}
                       photo={project.photo}
                       snippet={project.snippet}
-                      index={index+1}
+                      index={index + 1}
                     />
                   );
                 })}

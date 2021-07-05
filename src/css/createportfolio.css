@@ -48,8 +48,9 @@
   width: 18rem;
 }
 .input-bio{
-  /* overflow-wrap: break-word;
-  white-space: pre-line; */
+  white-space: pre-line;
+  overflow-wrap:break-word ;
+  
 }
 .input-container,
 .text-area-container {

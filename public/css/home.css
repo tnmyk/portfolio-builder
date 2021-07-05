@@ -68,12 +68,10 @@ footer {
   background-color: white;
   /* background-color: greenyellow; */
   align-items: center;
-  
 }
 .nav-links a {
   font-size: 0.8rem;
   color: #5f00b8;
-
 }
 .create-acc-btn {
   border: 1px solid gray;
@@ -133,29 +131,6 @@ footer {
   z-index: 111;
 }
 
-@media only screen and (max-width: 500px) {
-  .menuBtn {
-    display: block;
-  }
-  .nav-links {
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    left: 0;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-
-    transition: 1s;
-    overflow: hidden;
-  }
-  .menu-active {
-    height: 100vh;
-  }
-  .menu-inactive {
-    height: 0vh;
-  }
-}
 
 .content {
   margin-top: 4rem;
@@ -168,7 +143,7 @@ footer {
 }
 .intro {
   display: flex;
-  height: 25rem;
+  min-height: 25rem;
   /* background-color: cyan; */
   align-items: center;
   justify-content: space-between;
@@ -182,7 +157,6 @@ footer {
 }
 .intro-text h1 {
   color: rgb(159, 56, 255);
-  /* word-break: break-all; */
 }
 .intro-text h2 {
   color: rgb(189, 118, 255);
@@ -226,10 +200,62 @@ footer {
   left: 50%;
   transform: translateX(-50%) translateY(-80%);
   display: flex;
- width: 15rem;
- height: 12rem;
+  width: 15rem;
+  height: 12rem;
   flex-direction: column;
   /* background-color: red; */
   align-items: center;
   justify-content: center;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 13px;
+  }
+  .menuBtn {
+    display: block;
+  }
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    transition: 1s;
+    overflow: hidden;
+  }
+  .page{
+    width: 90%;
+  }
+  .intro {
+    flex-direction: column;
+    
+  }
+  .intro-text{
+    width: 100%;
+  }
+  footer{
+    flex-direction: column;
+  }
+  footer *{
+    margin-bottom: 0.4rem;
+  }
+  .intro-text h1 {
+    margin-top: 1.5rem;
+  }
+  .intro-text h2 {
+    margin-top: 1rem;
+    font-size: 90%;
+  }
+  .menu-active {
+    height: 100vh;
+  }
+  .menu-inactive {
+    height: 0vh;
+  }
 }

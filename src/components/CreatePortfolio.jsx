@@ -47,6 +47,7 @@ const CreatePortfolio = () => {
     });
     const [skillInput, setSkillInput] = useState("");
     const handleForm = (e) => {
+      
       const { value, name } = e.target;
       setForm({ ...form, [name]: value });
     };

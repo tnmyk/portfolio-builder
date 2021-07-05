@@ -74,6 +74,8 @@ nav {
   margin-bottom: 1rem;
   /* margin-left: 0.5rem; */
   width: 80%;
+  white-space: pre-line;
+  overflow-wrap:normal ;
 }
 .personal-social-btns-container {
   display: flex;
