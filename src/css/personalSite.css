@@ -8,10 +8,10 @@
   user-select: none;
   font-family: "Poppins", sans-serif;
 }
-*:first-letter{
+*:first-letter {
   text-transform: capitalize;
 }
-.logo a:first-letter{
+.logo a:first-letter {
   text-transform: none;
 }
 .content {
@@ -28,6 +28,9 @@ nav {
 .personal-nav-links {
   width: 20%;
 }
+.personal-nav-links a{
+  color: black;
+}
 .personal-page-content {
   min-height: 80vh;
   width: 75%;
@@ -38,7 +41,6 @@ nav {
 .personal-subheading {
   margin-top: 2rem;
   margin-bottom: 1rem;
-  
 }
 .intro-flex {
   width: 100%;
@@ -75,7 +77,7 @@ nav {
   /* margin-left: 0.5rem; */
   width: 80%;
   white-space: pre-line;
-  overflow-wrap:normal ;
+  overflow-wrap: normal;
 }
 .personal-social-btns-container {
   display: flex;
@@ -106,14 +108,37 @@ nav {
   border-radius: 7px;
 }
 
-.project-snippet{
+.project-snippet {
   font-size: 0.8rem;
   width: 97%;
   margin-left: 0.1rem;
   /* background-color: hotpink; */
   word-break: break-all;
 }
-.project-name{
+.project-name {
   width: 97%;
   margin-top: 0.5rem;
+}
+@media only screen and (max-width: 600px) {
+  .intro-flex {
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+  .personal-page-content {
+    width: 100%;
+    padding: 0;
+  }
+  .personal-nav-links {
+    width: 100%;
+  }
+  .personal-intro-text {
+    max-width: 100%;
+    /* background-color: red; */
+    width: 100%;
+    margin-top: 3rem;
+    padding: 0;
+  }
+  .personal-social-btns-container {
+    margin-top: 1rem;
+  }
 }
