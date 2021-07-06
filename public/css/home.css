@@ -50,6 +50,7 @@ footer {
 }
 .logo {
   font-size: 1.5rem;
+  font-weight: 400;
   z-index: 111;
   display: flex;
   align-items: center;
