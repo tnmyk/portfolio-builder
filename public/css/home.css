@@ -122,7 +122,7 @@ footer {
   /* width: min-content; */
   /* height: min-content; */
 }
-.dropdown-nav button:hover,a:hover {
+.dropdown-nav button:hover,.dropdown-nav a:hover {
   background-color: rgb(202, 202, 202);
 }
 .sign-out-btn {
