@@ -20,6 +20,11 @@ a {
 body {
   min-height: 100vh;
   position: relative;
+
+  padding-bottom: 8rem;
+  
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 nav {
   display: flex;
@@ -47,6 +52,9 @@ footer {
   padding: 1.5rem 5%;
   font-size: 0.9rem;
   font-weight: 600;
+   /* margin-top: 18rem; */
+  
+
 }
 .logo {
   font-size: 1.5rem;
@@ -138,7 +146,7 @@ footer {
 
 .content {
   margin-top: 4rem;
-  padding-bottom: 14rem;
+  /* padding-bottom: 14rem; */
  }
 .page {
   width: 90%;
@@ -178,7 +186,7 @@ footer {
 }
 .list {
   color: rgb(91, 0, 177);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-top: 1rem;
   margin-left: 2rem;
   line-height: 2rem;
@@ -272,6 +280,7 @@ footer {
 }
   footer {
     flex-direction: column;
+   
   }
   footer * {
     margin-bottom: 0.4rem;

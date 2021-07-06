@@ -8,6 +8,10 @@
   user-select: none;
   font-family: "Poppins", sans-serif;
 }
+.personal-page{
+  /* background: url('https://uploads-ssl.webflow.com/5ec207a448d573153616868a/60e32be7afd9e381aeae4f94_Mesh%2069.jpg'); */
+  background-size: cover;
+}
 *:first-letter {
   text-transform: capitalize;
 }
@@ -24,9 +28,11 @@ nav {
   width: 100%;
   padding: 1rem 5%;
   position: relative;
+  background: none;
 }
 .personal-nav-links {
   width: 20%;
+  background: none;
 }
 .personal-nav-links a{
   color: black;
@@ -80,6 +86,7 @@ nav {
   width: 80%;
   white-space: pre-line;
   overflow-wrap: normal;
+  word-break: break-word;
 }
 .personal-social-btns-container {
   display: flex;

@@ -56,9 +56,14 @@ const CreateProject = ({ index, setProjects, projects, id, inputId,edit,personal
         onChange={handleImageInput}
         style={{ display: "none" }}
         id={inputId}
+        accept="image/*"
       />
       <div className="project-image-container" onClick={handleImgClick}>
-        {photoURL? <img src={photoURL} alt="" className="project-image" />:<MdAddAPhoto className='add-project-icon'/>}
+        {photoURL ? (
+          <img src={photoURL} alt="" className="project-image" />
+        ) : (
+          <MdAddAPhoto className="add-project-icon" />
+        )}
       </div>
       <div className="input-container input-project-container">
         <input

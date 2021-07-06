@@ -125,6 +125,7 @@ const CreatePortfolio = () => {
             name="photo"
             id="input-photo"
             onChange={handleUpload}
+            accept="image/*"
           />
         </div>
         <h2 className="create-portfolio-steps">Step 2 : Enter Your Details</h2>
@@ -218,7 +219,7 @@ const CreatePortfolio = () => {
           </div>
           <br />
         </div>
-        
+
         <h2 className="create-portfolio-steps">
           Step 5 : Display Your Best Projects
         </h2>

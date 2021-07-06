@@ -22,7 +22,7 @@ const Settings = () => {
     }
     const handleDeleteAccount =async () => {
       if (!window.confirm("Are you sure you want to delete your Account?")) return;
-      
+
       await db
         .collection("username")
         .where("uid", "==", currentUser.uid)

@@ -48,7 +48,7 @@ const App = () => {
               path="/settings"
               component={Settings}
             />
-            <SignedRoute exact path="/set-username" component={SetUsername} />
+            <SignedRoute username={true} exact path="/set-username" component={SetUsername} />
             <Route exact path="/portfolio/:username">
               <PersonalSite setPersonal={setPersonal} />
             </Route>
