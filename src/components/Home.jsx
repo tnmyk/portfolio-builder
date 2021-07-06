@@ -7,7 +7,7 @@ const Home = () => {
           <h2>Make Your Presence More Noticeable</h2>
         </div>
         <div className="intro-image">
-          <img alt="" src="./images/blob.svg" className="blob" />
+          <img alt="" src="./images/blob2.svg" className="blob" />
         </div>
       </div>
       <h1 className="sub-heading">How to Works</h1>

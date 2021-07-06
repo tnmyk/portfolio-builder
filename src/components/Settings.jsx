@@ -38,9 +38,9 @@ const Settings = () => {
     };
   return (
     <div>
-      <SetUsername />
+      <SetUsername  />
       <div className="page">
-        <h1 className="sub-heading">Manage your Account</h1>
+        <h1 className="sub-heading" style={{marginTop:'1.5rem'}}>Manage your Account</h1>
         <div className="skills-container settings-options-container">
           {created && (
             <div className="skill delete" onClick={handleDeletePortfolio}>
