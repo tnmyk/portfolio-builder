@@ -243,6 +243,7 @@
   color: white;
   font-weight: 600;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 .add-project-icon{
   color: gray;

@@ -106,7 +106,7 @@ footer {
   border-radius: 10px;
   cursor: default;
 }
-.dropdown-nav button {
+.dropdown-nav button,.dropdown-nav a {
   border: none;
   padding: 0.3rem 2rem;
   margin: 0.2rem 0rem;
@@ -119,10 +119,10 @@ footer {
 }
 .dropdown-item-icon {
   margin-left: 0.5rem;
-  width: min-content;
-  height: min-content;
+  /* width: min-content; */
+  /* height: min-content; */
 }
-.dropdown-nav button:hover {
+.dropdown-nav button:hover,a:hover {
   background-color: rgb(202, 202, 202);
 }
 .sign-out-btn {

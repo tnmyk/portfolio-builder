@@ -21,10 +21,11 @@ const CreateAccount = () => {
       setErrorMsg("");
       setLoading(true);
       await signUp(email, password);
-      history.push("/set-username");
     } catch (e) {
       setErrorMsg(e.message);
     }
+      history.push("/set-username");
+
     setLoading(false);
   }
 

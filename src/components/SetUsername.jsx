@@ -85,7 +85,7 @@ const SetUsername = () => {
         <Load />
       </div>
       <div className="input-hint username-hint">
-        Your website link🔗 will be http://portfolio.com/portfolio/{username}{" "}
+        Your website link🔗 will be http://portfoliobuilder.vercel.app/portfolio/{username}{" "}
         <br />
         You can't change this later.
       </div>

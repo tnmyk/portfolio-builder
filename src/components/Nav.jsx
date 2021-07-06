@@ -65,7 +65,7 @@ const Nav = () => {
         )}
         {currentUser && (
           <>
-            <Link to="settings" className="active-on-mobile">
+            <Link to="/settings" className="active-on-mobile">
               Settings
             </Link>
 
@@ -79,9 +79,9 @@ const Nav = () => {
             <TiArrowSortedDown className="drop-btn" />
             {isDropDownOpen && (
               <div className="dropdown-nav">
-                <button>
+                <Link to='/settings'>
                   Settings <FiSettings className="dropdown-item-icon" />
-                </button>
+                </Link>
                 <button className="sign-out-btn" onClick={handleSignOut}>
                   Sign out
                   <BiLogInCircle className="dropdown-item-icon" />{" "}

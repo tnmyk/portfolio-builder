@@ -39,4 +39,16 @@
     background-color: rgb(255, 236, 130);
     border: 1px solid gray;
     margin-top: 2rem;
+    cursor:pointer;
 }
+
+/* setttings */
+
+.delete {
+    background-color: red;
+    cursor: pointer;
+}
+
+
+
+

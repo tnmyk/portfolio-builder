@@ -15,6 +15,7 @@ import { useState } from "react";
 import PersonalSite from "./PersonalSite";
 import SetUsername from "./SetUsername";
 import EditPortfolio from "./EditPortfolio";
+import Settings from "./Settings";
 const App = () => {
   const [personal,setPersonal] =useState(false)
   return (
@@ -41,6 +42,11 @@ const App = () => {
               exact
               path="/edit-portfolio"
               component={EditPortfolio}
+            />
+            <SignedRoute
+              exact
+              path="/settings"
+              component={Settings}
             />
             <SignedRoute exact path="/set-username" component={SetUsername} />
             <Route exact path="/portfolio/:username">
