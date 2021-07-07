@@ -78,7 +78,7 @@ footer {
   width: 30%;
   min-width: 17rem;
   justify-content: space-between;
-  background-color: none;
+  background-color:#F5F5DC ;
   /* background-color: greenyellow; */
   align-items: center;
 }
