@@ -8,6 +8,7 @@
   outline: none;
   user-select: none;
   /* outline: 1px solid #f00 !important; */
+  color: black !important;
 }
 /* color: rgb(221, 184, 255); */
 html {
@@ -15,7 +16,8 @@ html {
 }
 input,textarea{
   background-color:#F5F5DC ;
-}
+} 
+
 a {
   text-decoration: none;
   color: black;
@@ -304,3 +306,4 @@ footer {
     height: 0vh;
   }
 }
+
