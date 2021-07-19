@@ -45,9 +45,7 @@ const Nav = () => {
       <div
         className={`${isMenuOpen ? "menu-active" : "menu-inactive"} nav-links`}
       >
-        <Link to="/about" className="mobile-nav-link">
-          Learn more
-        </Link>
+        
         {!currentUser && (
           <Link to="/sign-in" className="mobile-nav-link">
             Sign in
