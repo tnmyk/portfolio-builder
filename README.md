@@ -4,8 +4,9 @@ Get shareable custom link for your portfolio and share the responsive website wi
 
 example: https://portfoliobuilder.vercel.app/portfolio/tanmay
 
-![image](https://user-images.githubusercontent.com/73903781/132631666-72202ff5-7e35-41b2-a252-d035a76d5191.png)
-![image](https://user-images.githubusercontent.com/73903781/132631703-99c79a72-36f1-4b37-8e10-d801f7244683.png)
+![image](https://user-images.githubusercontent.com/73903781/132631807-84b4248f-2199-4073-ad9d-316cbe8198c8.png)
+![image](https://user-images.githubusercontent.com/73903781/132631830-8a150d05-f2b1-4610-9f45-49d5c647c838.png)
+
 
 ## Available Scripts
 
