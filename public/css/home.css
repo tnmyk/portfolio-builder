@@ -15,7 +15,7 @@ html {
   font-size: 16px;
 }
 input,textarea{
-  background-color:#F5F5DC ;
+  /* background-color:#F5F5DC ; */
 } 
 
 a {
@@ -27,7 +27,7 @@ body {
   position: relative;
 
   padding-bottom: 8rem;
-  background-color:#F5F5DC;
+  /* background-color:#F5F5DC; */
   background-size: cover;
   background-repeat: no-repeat;
 }

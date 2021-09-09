@@ -18,8 +18,8 @@ const PersonalNav = ({ logo }) => {
       <div
         className={`${isMenuOpen ? "menu-active" : "menu-inactive"} nav-links personal-nav-links`}
       >
-        <Link to={`/portfolio/${username}/about`}>About</Link>
-        <Link to={`/portfolio/${username}/contact`}>Contact</Link>
+        {/* <Link to={`/portfolio/${username}/about`}>About</Link>
+        <Link to={`/portfolio/${username}/contact`}>Contact</Link> */}
       </div>
       <RiMenu4Fill className="menuBtn" onClick={handleMenu} />
     </nav>
